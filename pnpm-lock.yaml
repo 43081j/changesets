@@ -388,13 +388,10 @@ importers:
       '@changesets/types':
         specifier: workspace:^
         version: link:../types
-      js-yaml:
-        specifier: ^4.1.1
-        version: 4.1.1
+      yaml:
+        specifier: ^2.8.4
+        version: 2.8.4
     devDependencies:
-      '@types/js-yaml':
-        specifier: ^4.0.9
-        version: 4.0.9
       outdent:
         specifier: ^0.8.0
         version: 0.8.0
@@ -1366,9 +1363,6 @@ packages:
 
   '@types/estree@1.0.8':
     resolution: {integrity: sha512-dWHzHa2WqEXI/O1E9OjrocMTKJl2mSrEolh1Iomrv6U+JuNwaHXsXx9bLu5gG7BUWFIN0skIQJQ/L1rIex4X6w==}
-
-  '@types/js-yaml@4.0.9':
-    resolution: {integrity: sha512-k4MGaQl5TGo/iipqb2UDG2UwjXziSWkh0uysQelTlJpX1qGlpUZYm8PnO4DxG1qBomtJUdYJ6qR6xdIah10JLg==}
 
   '@types/json-schema@7.0.15':
     resolution: {integrity: sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA==}
@@ -2654,6 +2648,11 @@ packages:
   yallist@3.1.1:
     resolution: {integrity: sha512-a4UGQaWPH59mOXUYnAG2ewncQS4i4F43Tv3JoAM+s2VDAmS9NsK8GpDMLrCHPksFT7h3K6TOoUNn2pb7RoXx4g==}
 
+  yaml@2.8.4:
+    resolution: {integrity: sha512-ml/JPOj9fOQK8RNnWojA67GbZ0ApXAUlN2UQclwv2eVgTgn7O9gg9o7paZWKMp4g0H3nTLtS9LVzhkpOFIKzog==}
+    engines: {node: '>= 14.6'}
+    hasBin: true
+
   yocto-queue@0.1.0:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
@@ -3697,8 +3696,6 @@ snapshots:
 
   '@types/estree@1.0.8': {}
 
-  '@types/js-yaml@4.0.9': {}
-
   '@types/json-schema@7.0.15': {}
 
   '@types/node@24.12.2':
@@ -3845,7 +3842,7 @@ snapshots:
       estree-walker: 3.0.3
       magic-string: 0.30.21
     optionalDependencies:
-      vite: 8.0.10(@types/node@24.12.2)(terser@5.44.1)
+      vite: 8.0.10(@types/node@24.12.2)(terser@5.44.1)(yaml@2.8.4)
 
   '@vitest/pretty-format@4.1.5':
     dependencies:
@@ -4821,7 +4818,7 @@ snapshots:
 
   validate-npm-package-name@6.0.2: {}
 
-  vite@8.0.10(@types/node@24.12.2)(terser@5.44.1):
+  vite@8.0.10(@types/node@24.12.2)(terser@5.44.1)(yaml@2.8.4):
     dependencies:
       lightningcss: 1.32.0
       picomatch: 4.0.4
@@ -4832,6 +4829,7 @@ snapshots:
       '@types/node': 24.12.2
       fsevents: 2.3.3
       terser: 5.44.1
+      yaml: 2.8.4
 
   vitest@4.1.5(@types/node@24.12.2)(@vitest/coverage-v8@4.1.5)(vite@8.0.10):
     dependencies:
@@ -4853,7 +4851,7 @@ snapshots:
       tinyexec: 1.0.2
       tinyglobby: 0.2.16
       tinyrainbow: 3.1.0
-      vite: 8.0.10(@types/node@24.12.2)(terser@5.44.1)
+      vite: 8.0.10(@types/node@24.12.2)(terser@5.44.1)(yaml@2.8.4)
       why-is-node-running: 2.3.0
     optionalDependencies:
       '@types/node': 24.12.2
@@ -4875,6 +4873,8 @@ snapshots:
   wrappy@1.0.2: {}
 
   yallist@3.1.1: {}
+
+  yaml@2.8.4: {}
 
   yocto-queue@0.1.0: {}
 

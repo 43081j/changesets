@@ -1,7 +1,7 @@
 import type { Release, VersionType } from "@changesets/types";
-import yaml from "js-yaml";
+import * as yaml from "yaml";
 
-const mdRegex = /\s*---([^]*?)\n\s*---(\s*(?:\n|$)[^]*)/;
+const mdRegex = /\s*---([^]*?)\r?\n\s*---(\s*(?:\r?\n|$)[^]*)/;
 
 const EXAMPLE_FORMAT = `---\n"package-name": patch\n---`;
 
@@ -77,7 +77,7 @@ export function parseChangesetFile(contents: string): {
   let releases: Release[];
   let yamlStuff: Record<string, VersionType> | undefined;
   try {
-    yamlStuff = yaml.load(roughReleases) as typeof yamlStuff;
+    yamlStuff = yaml.parse(roughReleases) as typeof yamlStuff;
   } catch (e) {
     throw new Error(
       `could not parse changeset - invalid YAML in frontmatter.\n` +

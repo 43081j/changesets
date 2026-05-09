@@ -255,7 +255,7 @@ describe("parsing a changeset", () => {
 
   it("should throw when frontmatter hasn't a valid yml structure", () => {
     const changesetMd = outdent`---
-    : minor
+    "some-package: minor
     ---
 
     Nice simple summary
@@ -264,14 +264,14 @@ describe("parsing a changeset", () => {
     expect(() => parse(changesetMd)).toThrowErrorMatchingInlineSnapshot(`
       [Error: could not parse changeset - invalid YAML in frontmatter.
       The frontmatter between the "---" delimiters must be valid YAML.
-      YAML error: incomplete explicit mapping pair; a key node is missed; or followed by a non-tabulated empty line (2:1)
+      YAML error: Missing closing "quote at line 2, column 21:
 
-       1 | 
-       2 | : minor
-      -----^
+      "some-package: minor
+                          ^
+
       Frontmatter content:
 
-      : minor]
+      "some-package: minor]
     `);
   });
 
